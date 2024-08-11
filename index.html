@@ -11,7 +11,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
     </head>
     <body>
-        <h1>canvases of algorithmic dreams</h1>
+        <h1 id="title">canvases of algorithmic dreams</h1>
         <p>procedural art by <a href=https://jieruei.github.io>jieruei chang</a> [<a href=https://github.com/knosmos>@knosmos]</a></p>
         <div id="grid">
             <a href="perlin-field/index.html" class="grid-item" style="background-image:url('assets/perlin-field.png')">
@@ -35,5 +35,39 @@
         </div>
         <br><br>
         <p>made with <a href="https://p5js.org/">p5.js</a></p>
+        <script>
+            // scramble title
+            let title = document.getElementById("title");
+            let titleText = "canvases of algorithmic dreams";
+            function scrambleTitle(k) {
+                let rem = Math.floor(k / 2);
+                if (rem > titleText.length) {
+                    title.innerHTML = titleText;
+                    return;
+                }
+                let titleScramble = "";
+                for (let i = 0; i < titleText.length; i++) {
+                    if (titleText[i] == " ") {
+                        titleScramble += " ";
+                    }
+                    else if (i < rem) {
+                        titleScramble += titleText[i];
+                    }
+                    else {
+                        titleScramble += String.fromCharCode((titleText.charCodeAt(i) - 97 + k) % 26 + 97);
+                    }
+                }
+                title.innerHTML = titleScramble;
+                setTimeout(
+                    function() {
+                        scrambleTitle(k + 1);
+                    }, 20
+                );
+            }
+            scrambleTitle(0);
+            title.addEventListener("mouseover", function() {
+                scrambleTitle(0);
+            });
+        </script>
     </body>
 </html>
