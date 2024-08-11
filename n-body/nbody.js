@@ -5,7 +5,7 @@ function setup() {
     let height = window.innerHeight;
     createCanvas(width, height);
     points = generate(500);
-    background(0, 0, 50);
+    background(0, 0, 20);
 }
 
 function generate(num_points) {
@@ -73,4 +73,9 @@ function draw() {
         fill(point[5][0], point[5][1], point[5][2]);
         circle(point[0], point[1], point[4]);
     };
+}
+
+function mouseDragged() {
+    points[points.length-1][0] = mouseX;
+    points[points.length-1][1] = mouseY;
 }
