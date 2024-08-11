@@ -18,6 +18,19 @@ body {
     grid-gap: 10px;
 }
 
+h1 {
+    font-size: 40pt;
+    font-weight: 400;
+}
+
+h1 span {
+    color: rgb(190, 190, 190);
+}
+
+p, a {
+    color: black;
+}
+
 .grid-item {
     color: white;
     border: 1px solid #000;
@@ -30,19 +43,6 @@ body {
     padding-bottom: 100%;
     display: block;
     position: relative;
-}
-
-h1 {
-    font-size: 40pt;
-    font-weight: 400;
-}
-
-h1 span {
-    color: rgb(190, 190, 190);
-}
-
-p, a {
-    color: black;
 }
 
 .grid-item > p {
