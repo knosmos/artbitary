@@ -77,7 +77,7 @@ function random(min, max) {
 }
 
 function drawShapePencil(vertices) {
-    let interpolate_points = 5;
+    let interpolate_points = 3;
     let random_offset = 1;
     let x0, y0, x1, y1;
     beginShape();
@@ -130,5 +130,4 @@ function draw() {
     
     render(mountains_clipped, scale, offset);
     renderClouds(clouds, scale, offset);
-    frameRate(15);
 }
